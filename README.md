@@ -1,7 +1,7 @@
-Reproduction for bug affecting at least @typescript/native-preview@7.0.0-dev.20250603.1
+Reproduction for bug affecting at least @typescript/native-preview@7.0.0-dev.20250610.1
 
 ```
-npm install
+pnpm install
 
 npm run build //build with tsc
 //No error
