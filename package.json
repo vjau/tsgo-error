@@ -17,7 +17,6 @@
     "@typescript/native-preview": "7.0.0-dev.20250701.1"
   },
   "devDependencies": {
-    "typescript": "~5.8.3",
-    "@types/node": "~22.15.29"
+    "typescript": "~5.8.3"
   }
 }
