@@ -13,9 +13,8 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
-    "fastify": "4.29.0",
     "@trpc/server": "11.1.4",
-    "@typescript/native-preview": "7.0.0-dev.20250610.1"
+    "@typescript/native-preview": "7.0.0-dev.20250701.1"
   },
   "devDependencies": {
     "typescript": "~5.8.3",

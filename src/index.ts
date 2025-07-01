@@ -1,28 +1,14 @@
-import { fastifyTRPCPlugin } from "@trpc/server/adapters/fastify";
-import fastify from "fastify";
-import { FastifyTRPCPluginOptions } from "@trpc/server/adapters/fastify";
-import { AppRouter, appRouter } from "./router/index.js";
+import { initTRPC } from "@trpc/server";
 
-const server = fastify({
-  logger: true,
-});
+/**
+ * Initialization of tRPC backend
+ * Should be done only once per backend!
+ */
+const t = initTRPC.create();
 
-server.register(fastifyTRPCPlugin, {
-  prefix: "/fooApi",
-
-  trpcOptions: {
-    router: appRouter,
-  } satisfies FastifyTRPCPluginOptions<AppRouter>["trpcOptions"],
-});
-
-const start = async () => {
-  try {
-    await server.listen({ port: 3000 });
-    server.log.info(`Server listening on http://localhost:3000`);
-  } catch (err) {
-    server.log.error(err);
-    process.exit(1);
-  }
-};
-
-start();
+/**
+ * Export reusable router and procedure helpers
+ * that can be used throughout the router²
+ */
+export const router = t.router;
+export const publicProcedure = t.procedure;
